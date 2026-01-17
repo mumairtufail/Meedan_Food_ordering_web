@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+    --color-base: #F9F6F1;
+    --color-primary: #014152;
+    --font-sans: 'Poppins', ui-sans-serif, system-ui;
+
+    --animate-fade-up: fade-up 0.8s ease-out forwards;
+    --animate-zoom-in: zoom-in 1s ease-out forwards;
+    --animate-slide-rotate: slide-rotate 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    --animate-marquee: marquee 30s linear infinite;
+
+    @keyframes fade-up {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes zoom-in {
+        from { transform: scale(1.1); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes slide-rotate {
+        from { transform: translateX(100px) rotate(8deg); opacity: 0; }
+        to { transform: translateX(0) rotate(0deg); opacity: 1; }
+    }
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+}
