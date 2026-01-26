@@ -76,8 +76,8 @@
         <div class="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] md:text-xs text-base/30 uppercase tracking-wider">
             <span>© 2026 Medaan Restaurant. All Rights Reserved.</span>
             <div class="flex gap-6">
-                <a href="/privacy" class="hover:text-base transition-colors">Privacy Policy</a>
-                <a href="/sitemap" class="hover:text-base transition-colors">Sitemap</a>
+                {{-- <a href="/privacy" class="hover:text-base transition-colors">Privacy Policy</a>
+                <a href="/sitemap" class="hover:text-base transition-colors">Sitemap</a> --}}
             </div>
         </div>
     </div>

@@ -1,29 +1,21 @@
-@import "tailwindcss";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@theme {
-    --color-base: #F9F6F1;
-    --color-primary: #014152;
-    --font-sans: 'Poppins', ui-sans-serif, system-ui;
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center px-4 py-2 bg-primary border border-transparent rounded-md font-semibold text-xs text-base uppercase tracking-widest hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition ease-in-out duration-150;
+    }
 
-    --animate-fade-up: fade-up 0.8s ease-out forwards;
-    --animate-zoom-in: zoom-in 1s ease-out forwards;
-    --animate-slide-rotate: slide-rotate 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-    --animate-marquee: marquee 30s linear infinite;
+    .btn-secondary {
+        @apply inline-flex items-center px-4 py-2 bg-white border border-primary text-primary rounded-md font-semibold text-xs uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150;
+    }
 
-    @keyframes fade-up {
-        from { opacity: 0; transform: translateY(20px); }
-        to { opacity: 1; transform: translateY(0); }
+    .btn-danger {
+        @apply inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition ease-in-out duration-150;
     }
-    @keyframes zoom-in {
-        from { transform: scale(1.1); opacity: 0; }
-        to { transform: scale(1); opacity: 1; }
-    }
-    @keyframes slide-rotate {
-        from { transform: translateX(100px) rotate(8deg); opacity: 0; }
-        to { transform: translateX(0) rotate(0deg); opacity: 1; }
-    }
-    @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+    
+    .card {
+        @apply bg-base border border-primary/10 rounded-xl p-6 shadow-sm;
     }
 }

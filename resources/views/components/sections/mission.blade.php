@@ -7,9 +7,9 @@
             <p class="text-lg text-primary/70 leading-relaxed">
                 We are leading the charge against bland meals. With bold branding, a loyal following, and a kitchen built on quality, Medaan is redefining what Middle Eastern dining can be. We use only the finest ingredients to ensure every guest feels at home and every dish hits the mark. Join the fastest-growing flavor movement in Calgary.
             </p>
-             <a href="/story" class="inline-block bg-primary text-base px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition shadow-lg hover:-translate-y-1 duration-300">
+             <!-- <a href="/story" class="inline-block bg-primary text-base px-8 py-3 rounded-full font-medium hover:bg-primary/90 transition shadow-lg hover:-translate-y-1 duration-300">
                 Read Our Story
-            </a>
+            </a> -->
         </div>
         <div class="relative order-1 lg:order-2">
              <div class="aspect-square rounded-xl overflow-hidden shadow-2xl relative z-10 w-full max-w-md mx-auto transform hover:rotate-2 transition-transform duration-700">

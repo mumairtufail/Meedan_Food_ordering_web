@@ -1,12 +1,13 @@
+
 <x-layouts.app>
    {{-- 1. Hero / Carousel --}}
    <x-sections.hero />
 
    {{-- 2. Menu Highlights --}}
-   <x-sections.menu-highlights />
+   <x-sections.menu-highlights :categories="$categories" />
 
    {{-- 3. Signature Dishes --}}
-   <x-sections.signature-dishes />
+   <x-sections.signature-dishes :products="$products" />
 
    {{-- 4. Mission / Story --}}
    <x-sections.mission />

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bfe12996eeecb6fdc8713a9fd9d431f8",
+    "content-hash": "f805e13fa3eaeef05a105098690fb445",
     "packages": [
         {
             "name": "brick/math",
@@ -3160,6 +3160,66 @@
             "time": "2025-12-14T04:43:48+00:00"
         },
         {
+            "name": "sheaf/cli",
+            "version": "v1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sheafui/cli.git",
+                "reference": "4bf1d1959f7a4c18b0d1388e6bb3509ce6253f79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sheafui/cli/zipball/4bf1d1959f7a4c18b0d1388e6bb3509ce6253f79",
+                "reference": "4bf1d1959f7a4c18b0d1388e6bb3509ce6253f79",
+                "shasum": ""
+            },
+            "require-dev": {
+                "orchestra/testbench": "^10.4",
+                "pestphp/pest": "^3.8",
+                "pestphp/pest-plugin-laravel": "^3.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Sheaf\\Cli\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sheaf\\Cli\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Youssef ACHCHIRAJ",
+                    "email": "achchiraj.youssef@gmail.com",
+                    "homepage": "https://youssef-achchiraj.com",
+                    "role": "Full Stack Developer"
+                }
+            ],
+            "description": "A CLI tool for Sheaf UI",
+            "homepage": "https://github.com/sheaf/cli",
+            "keywords": [
+                "artisan-command",
+                "cli",
+                "laravel",
+                "laravel-package",
+                "package",
+                "sheaf"
+            ],
+            "support": {
+                "issues": "https://github.com/sheafui/cli/issues",
+                "source": "https://github.com/sheafui/cli/tree/v1.3.4"
+            },
+            "time": "2025-11-30T14:34:29+00:00"
+        },
+        {
             "name": "symfony/console",
             "version": "v6.4.31",
             "source": {
@@ -5818,6 +5878,68 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.1.1"
             },
             "time": "2025-04-30T06:54:44+00:00"
+        },
+        {
+            "name": "laravel/breeze",
+            "version": "v1.29.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "22c53b84b7fff91b01a318d71a10dfc251e92849"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/22c53b84b7fff91b01a318d71a10dfc251e92849",
+                "reference": "22c53b84b7fff91b01a318d71a10dfc251e92849",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.17",
+                "illuminate/filesystem": "^10.17",
+                "illuminate/support": "^10.17",
+                "illuminate/validation": "^10.17",
+                "php": "^8.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0",
+                "phpstan/phpstan": "^1.10"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "time": "2024-03-04T14:35:21+00:00"
         },
         {
             "name": "laravel/pint",
