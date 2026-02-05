@@ -58,7 +58,6 @@
                              </h3>
                              
                              <div class="max-h-64 overflow-y-auto border border-gray-200 rounded-lg bg-white p-2">
-                                <input type="hidden" name="addons" value=""> 
                                 @if($addons->isEmpty())
                                     <p class="text-sm text-gray-500 text-center py-4">No addons available. <a href="{{ route('addons.create') }}" class="text-primary hover:underline font-medium">Create New Addon</a></p>
                                 @else
@@ -67,7 +66,7 @@
                                             <label class="flex items-center space-x-3 p-3 hover:bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 cursor-pointer transition-all">
                                                 <input type="checkbox" name="addons[]" value="{{ $addon->id }}" 
                                                     class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4"
-                                                    {{ in_array($addon->id, old('addons', $product->addons->pluck('id')->toArray())) ? 'checked' : '' }}
+                                                    {{ in_array($addon->id, (array) old('addons', $product->addons->pluck('id')->toArray())) ? 'checked' : '' }}
                                                 >
                                                 <div class="flex-1 flex justify-between items-center">
                                                     <span class="text-sm font-medium text-gray-900">{{ $addon->name }}</span>
@@ -78,6 +77,7 @@
                                     </div>
                                 @endif
                              </div>
+                             @error('addons') <p class="mt-1 text-sm text-red-600">{{ $message }}</p> @enderror
                         </div>
                     </div>
 

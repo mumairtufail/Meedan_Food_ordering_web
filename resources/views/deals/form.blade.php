@@ -55,7 +55,7 @@
                                             <label class="flex items-center space-x-3 p-3 hover:bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 cursor-pointer transition-all">
                                                 <input type="checkbox" name="products[]" value="{{ $product->id }}" 
                                                     class="rounded border-gray-300 text-primary focus:ring-primary h-4 w-4"
-                                                    {{ in_array($product->id, old('products', $deal->products->pluck('id')->toArray())) ? 'checked' : '' }}
+                                                    {{ in_array($product->id, (array) old('products', $deal->products->pluck('id')->toArray())) ? 'checked' : '' }}
                                                 >
                                                 <div class="flex-1 flex justify-between items-center">
                                                     <span class="text-sm font-medium text-gray-900">{{ $product->name }}</span>

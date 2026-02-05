@@ -73,3 +73,57 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// ==========================================
+// UTILITY ROUTES FOR SHARED HOSTING STORAGE
+// ==========================================
+
+// 1. Route to CREATE the storage link
+Route::get('/storage-link', function () {
+    $target = storage_path('app/public');
+    $link = public_path('storage');
+
+    if (file_exists($link)) {
+        return 'The "public/storage" path already exists. If your images are still not loading, try "<b>/storage-unlink</b>" first, then run this again.';
+    }
+
+    try {
+        symlink($target, $link);
+        return 'SUCCESS: Storage link created. Your images should be visible now.';
+    } catch (\Throwable $e) {
+        return 'ERROR: Failed to create link: ' . $e->getMessage();
+    }
+});
+
+// 2. Route to REMOVE the storage link (if you need to reset)
+Route::get('/storage-unlink', function () {
+    $link = public_path('storage');
+
+    if (!file_exists($link)) {
+        return 'The "public/storage" path does not exist, so there is nothing to remove.';
+    }
+
+    try {
+        if (is_link($link)) {
+            unlink($link);
+            return 'SUCCESS: Storage symlink has been removed. You can now run "<b>/storage-link</b>" to recreate it.';
+        }
+        
+        // Handle case where it's a real directory
+        if (is_dir($link)) {
+            $backupName = 'storage_backup_' . time();
+            $backupPath = public_path($backupName);
+            
+            if (rename($link, $backupPath)) {
+                return "SUCCESS: The existing 'public/storage' was a REAL DIRECTORY. It has been renamed to '<b>{$backupName}</b>' to preserve your data. You can now run '<b>/storage-link</b>' to correct the issue.";
+            }
+
+            return 'ERROR: "public/storage" is a real directory and could not be renamed automatically. Please rename it manually in cPanel File Manager.';
+        }
+
+        unlink($link); 
+        return 'SUCCESS: Storage file removed.';
+    } catch (\Throwable $e) {
+        return 'ERROR: Failed to remove link: ' . $e->getMessage();
+    }
+});
