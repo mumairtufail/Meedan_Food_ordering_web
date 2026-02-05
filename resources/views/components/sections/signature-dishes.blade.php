@@ -28,6 +28,16 @@
                     ];
                 @endphp
                 <div class="group cursor-pointer" @click="$dispatch('open-product-modal', {{ json_encode($productData) }})">
+                    <div class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-6 bg-white border border-gray-100 shadow-sm transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl flex items-center justify-center p-6">
+                        <img src="{{ $imageUrl }}" 
+                             alt="{{ $product->name }}"
+                             class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 relative z-10"
+                             loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
+                            <span class="text-base font-semibold text-lg text-white">View Details →</span>
+                        </div>
+                    </div>
+                {{-- old code was:
                     <div class="relative overflow-hidden rounded-2xl aspect-[4/5] mb-6 bg-primary/5 shadow-sm transition-all duration-500 group-hover:-translate-y-3 group-hover:shadow-2xl">
                         <img src="{{ $imageUrl }}" 
                              alt="{{ $product->name }}"
@@ -37,6 +47,7 @@
                             <span class="text-base font-semibold text-lg text-white">View Details →</span>
                         </div>
                     </div>
+                --}}
                     <h3 class="text-xl font-bold text-primary">{{ $product->name }}</h3>
                     <p class="text-primary/60 text-sm mt-2 leading-relaxed line-clamp-2">{{ $product->description }}</p>
                 </div>

@@ -7,9 +7,9 @@
             
             {{-- Brand Column (Compact) --}}
             <div class="lg:w-1/3 space-y-6">
-                <a href="/" class="block">
-                    <img src="https://www.medaan.ca/wp-content/uploads/2023/06/mmer.png" alt="Medaan Logo" class="h-14 w-auto brightness-0 invert opacity-90 hover:opacity-100 transition-opacity">
-                </a>
+              <a href="/" class="flex items-center">
+                <x-application-logo class="h-12 md:h-14 w-auto transition-all" />
+            </a>
                 <p class="text-base/60 text-sm leading-relaxed max-w-sm">
                     Bold flavors. Zero compromise. Calgary's home for authentic Middle Eastern soul food.
                 </p>

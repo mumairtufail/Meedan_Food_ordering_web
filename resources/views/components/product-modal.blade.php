@@ -90,9 +90,9 @@
                         <input type="hidden" name="product_id" :value="product.id">
                         
                         <!-- Header Image -->
-                        <div class="relative h-48 sm:h-56 bg-gray-100">
-                             <img :src="product.image_url" :alt="product.name" class="w-full h-full object-cover">
-                             <button type="button" @click="close()" class="absolute top-4 right-4 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-full p-2 transition-colors">
+                        <div class="relative h-48 sm:h-56 bg-white border-b border-gray-100 flex items-center justify-center p-4">
+                             <img :src="product.image_url" :alt="product.name" class="w-full h-full object-contain">
+                             <button type="button" @click="close()" class="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full p-2 transition-colors z-20 shadow-sm">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                              </button>
                         </div>

@@ -65,9 +65,17 @@
                                 ];
                             @endphp
                              <div class="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full relative" x-data>
-                                <div class="relative h-56 overflow-hidden bg-gray-100 cursor-pointer" @click="$dispatch('open-product-modal', {{ json_encode($productData) }})">
-                                    <img src="{{ $imageUrl }}" alt="{{ $product->name }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-gray-900 shadow-sm border border-gray-100">
+                                <div class="relative h-56 overflow-hidden bg-white border-b border-gray-50 cursor-pointer p-4 flex items-center justify-center" @click="$dispatch('open-product-modal', {{ json_encode($productData) }})">
+                                    {{-- Lazy loading with blur-up effect --}}
+                                    <img 
+                                        src="{{ $imageUrl }}" 
+                                        alt="{{ $product->name }}" 
+                                        loading="lazy"
+                                        decoding="async"
+                                        class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                        style="background: linear-gradient(to bottom, #f3f4f6, #e5e7eb);"
+                                    >
+                                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-bold text-gray-900 shadow-sm border border-gray-100 z-10">
                                         ${{ number_format($product->price, 2) }}
                                     </div>
                                 </div>
