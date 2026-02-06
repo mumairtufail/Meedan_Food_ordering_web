@@ -6,14 +6,14 @@
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 border-b border-white/5 pb-12">
             
             {{-- Brand Column (Compact) --}}
-            <div class="lg:w-1/3 space-y-6">
-              <a href="/" class="flex items-center">
+            <div class="lg:w-1/3 space-y-6 flex flex-col items-center text-center lg:items-start lg:text-left">
+              <a href="/" class="flex items-center justify-center lg:justify-start">
                 <x-application-logo class="h-12 md:h-14 w-auto transition-all" />
             </a>
-                <p class="text-base/60 text-sm leading-relaxed max-w-sm">
+                <p class="text-base/60 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
                     Bold flavors. Zero compromise. Calgary's home for authentic Middle Eastern soul food.
                 </p>
-                <div class="flex items-center gap-4 pt-2">
+                <div class="flex items-center justify-center lg:justify-start gap-4 pt-2">
                     <a href="https://facebook.com/medaan" target="_blank" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-base/60 hover:bg-base hover:text-primary transition-all duration-300">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
